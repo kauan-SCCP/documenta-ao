@@ -2,6 +2,10 @@ const ProdutoService = require('../services/produto-service');
 
 class ProdutoController {
 
+    // Cria um novo produto
+    // Precisa do produto, descricao e preco
+    // Retorna 201 em caso de sucesso
+    // Retorna 500 caso de erro
     async CriarProduto(req, res) {
         const produto = req.body.produto;
         const descricao = req.body.descricao;
@@ -17,6 +21,9 @@ class ProdutoController {
         }
     }
 
+    // Busca um produto por id
+    // O id deve ser enviado na url
+    // Retorna 200 com o produto encontrado (ou vazio se não encontrar)
     async BuscarProduto(req, res) {
         const id = req.params.id;
         let Produto;
